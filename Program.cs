@@ -1,20 +1,9 @@
-﻿
+﻿Individuo i1 = new Individuo("Ly", 1.65, 80);
+
+
 Console.WriteLine("-----CALCULADORA IMC-----");
 
-Console.WriteLine("Qual o seu nome?");
-string nome = Console.ReadLine();
-
-Console.WriteLine("\nQual a sua altura em metros? Ex: 1,65");
-float altura = Convert.ToSingle(Console.ReadLine());
-
-Console.WriteLine("\nQual o seu peso em Kg? Ex: 57,4");
-float peso = Convert.ToSingle(Console.ReadLine());
-
-double imc = Math.Round(peso / (altura*altura), 1);
-
-Console.WriteLine("\n{0}, sua altura é {1} e seu peso é {2}", nome, altura, peso);
-
-Console.WriteLine("Seu IMC é {0}", imc);
+Console.WriteLine("Seu IMC é {0}", i1.IMC);
 
 Console.WriteLine("\nSituação do IMC:");
 
@@ -43,16 +32,8 @@ else
 double pesoIdeal = 0.0;
 
 if (imc < 18.5)
-{
-    pesoIdeal = 18.5 * altura * altura;
-    double ganharPeso = Math.Round((peso - pesoIdeal), 2);
-    Console.WriteLine("Para chegar à situação ideal, você deve ganhar {0} kg.", ganharPeso);
-}
+    Console.WriteLine("Para chegar à situação ideal, você deve ganhar {0} kg.", GanharPeso());
 
 else if (imc > 25)
-{
-    pesoIdeal = 24.9 * altura * altura;
-    double perderPeso = Math.Round((peso - pesoIdeal), 2);
-    Console.WriteLine("Para chegar à situação ideal, você deve perder {0} kg.", perderPeso);
+    Console.WriteLine("Para chegar à situação ideal, você deve perder {0} kg.", PerderPeso());
 
-}
