@@ -1,39 +1,21 @@
-﻿Individuo i1 = new Individuo("Ly", 1.65, 80);
+﻿Individuo i1 = new Individuo();
 
+Console.WriteLine("-----CALCULADORA IMC-----\n");
 
-Console.WriteLine("-----CALCULADORA IMC-----");
+Console.WriteLine("Informe seu nome:");
+i1.Nome = Console.ReadLine();
 
-Console.WriteLine("Seu IMC é {0}", i1.IMC);
+Console.WriteLine("Informe sua altura:");
+i1.Altura = Convert.ToSingle(Console.ReadLine());
 
-Console.WriteLine("\nSituação do IMC:");
+Console.WriteLine("Informe seu peso:");
+i1.Peso = Convert.ToSingle(Console.ReadLine());
 
-if (imc < 17)
-    Console.WriteLine("Muito abaixo do peso...");
+Console.WriteLine("\n~~~~\n");
 
-else if (imc >= 17 && imc < 18.5)
-    Console.WriteLine("Abaixo do peso...");
+Console.WriteLine("Nome: {0}", i1.Nome);
+Console.WriteLine("Altura: {0}", i1.Altura);
+Console.WriteLine("Peso: {0}", i1.Peso);
 
-else if (imc >= 18.5 && imc <= 24.9)
-    Console.WriteLine("Peso normal!");
-
-else if (imc >= 25 && imc <= 29.9)
-    Console.WriteLine("Acima do peso...");
-
-else if (imc >= 30 && imc <= 34.9)
-    Console.WriteLine("Obesidade I...");
-
-else if (imc >= 35 && imc <= 39.9)
-    Console.WriteLine("Obesidade II...");
-
-else
-    Console.WriteLine("Obesidade III...");
-
-
-double pesoIdeal = 0.0;
-
-if (imc < 18.5)
-    Console.WriteLine("Para chegar à situação ideal, você deve ganhar {0} kg.", GanharPeso());
-
-else if (imc > 25)
-    Console.WriteLine("Para chegar à situação ideal, você deve perder {0} kg.", PerderPeso());
+Console.WriteLine("\nClassificação do IMC: {0}", i1.Classificacao); 
 
