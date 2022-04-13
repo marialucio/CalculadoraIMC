@@ -6,6 +6,12 @@ public class Individuo
 
     public double IMC { get => Peso / (Altura*Altura);}
 
+    public Individuo(String nome, float altura, float peso)
+    {
+        Nome = nome;
+        Altura = altura;
+        Peso = peso;
+    }
     public Individuo()
     {
         Nome = "";
@@ -55,19 +61,17 @@ public class Individuo
         }
     }
 
-    public void PesoIdeal()
+    public double GanharPeso()
     {
-        if(IMC < 18.5)
-        {
-            double pesoIdeal = 18.5 * Altura * Altura;
-            double ganharPeso = Math.Round((Peso - pesoIdeal), 2);
-
-        }
-
-        if(IMC > 24.9)
-        {
-            double pesoIdeal = 24.9 * Altura * Altura;
-            double perderPeso = Math.Round((Peso - pesoIdeal), 2);
-        }
+        double pesoIdeal = 18.5 * Altura * Altura;
+        double ganharPeso = Math.Round((Peso - pesoIdeal), 2);
+        return ganharPeso;
+    }
+    
+    public double PerderPeso()
+    {
+        double pesoIdeal = 24.9 * Altura * Altura;
+        double perderPeso = Math.Round((Peso - pesoIdeal), 2);
+        return perderPeso;     
     }
 }
