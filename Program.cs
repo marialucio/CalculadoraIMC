@@ -1,6 +1,6 @@
 ﻿Individuo i1 = new Individuo();
 
-Console.WriteLine("-----CALCULADORA IMC-----");
+Console.WriteLine("----CALCULADORA IMC----");
 
 Console.WriteLine("Informe seu nome:");
 i1.Nome = Console.ReadLine();
